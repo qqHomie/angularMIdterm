@@ -1,3 +1,3 @@
 export class comment{
-    text!: String
+    text!: String;
 }

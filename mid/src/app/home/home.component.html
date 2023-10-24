@@ -7,9 +7,18 @@
         <input placeholder="Type your item" [(ngModel)]="itemValue">
         <button (click)="addItem()">Add</button>
     </div>
-    <div *ngFor="let item of items">
-        <p>{{ item.description }}</p>
-        <button (click)="addLike(item.id)">Like</button>
-        <p>Likes: {{ item.likes }}</p>
+    <div class="posts" *ngFor="let item of items">
+        <div>
+            <p>{{ item.description }}</p>
+            <button (click)="addLike(item.id)">Like</button>
+            <p>Likes: {{ item.likes }}</p>
+        </div>
+        <div>
+            <input placeholder="add comment" [(ngModel)]="commentValue">
+            <button (click)="addComment(item.id)">Add</button>
+            <div *ngFor="let comment of item.comments">
+                <p>{{ comment.text }}</p>
+            </div>
+        </div>
     </div>
 </div>

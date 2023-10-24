@@ -13,14 +13,14 @@ export class HomeComponent {
   itemValue: String = '';
   commentValue: String = '';
   items: item[] = [
-    {id: 1, description: "hello angular", likes: 5}, 
-    {id: 2, description: "how are you doing", likes: 3}, 
-    {id: 3, description: "today is tuesday", likes: 0}
+    {id: 1, description: "hello angular", likes: 5, comments: []}, 
+    {id: 2, description: "how are you doing", likes: 3, comments: []}, 
+    {id: 3, description: "today is tuesday", likes: 0, comments: []}
   ]
   constructor(){}
 
   addItem(){
-    this.items.push({id: this.items.length + 1, description: this.itemValue, likes: 0});
+    this.items.push({id: this.items.length + 1, description: this.itemValue, likes: 0, comments: []});
     this.itemValue = '';
   }
 
@@ -31,7 +31,10 @@ export class HomeComponent {
     }
   }
 
-  addComment(){
-    
+  addComment(id: number){
+    const item = this.items.find(i => i.id === id);
+    if (item){
+      item.comments.push({text: this.commentValue});
+    }
   }
 }
