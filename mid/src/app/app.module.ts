@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FeedComponent } from './feed/feed.component';
+import { FormsModule } from '@angular/forms';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,6 +26,7 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
+    FormsModule,
   ],
   exports: [ RouterModule ],
   providers: [],

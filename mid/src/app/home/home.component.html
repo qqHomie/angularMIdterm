@@ -3,4 +3,13 @@
     <button routerLink="/feed">FEED</button>
     <button routerLink="/about">ABOUT US</button>
     <h1>HOME PAGE</h1>
+    <div>
+        <input placeholder="Type your item" [(ngModel)]="itemValue">
+        <button (click)="addItem()">Add</button>
+    </div>
+    <div *ngFor="let item of items">
+        <p>{{ item.description }}</p>
+        <button (click)="addLike(item.id)">Like</button>
+        <p>Likes: {{ item.likes }}</p>
+    </div>
 </div>
