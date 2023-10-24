@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FeedComponent } from './feed/feed.component';
 import { FormsModule } from '@angular/forms';
+import { NewDirectiveDirective } from './new-directive.directive';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    FeedComponent
+    FeedComponent,
+    NewDirectiveDirective
   ],
   imports: [
     BrowserModule,
