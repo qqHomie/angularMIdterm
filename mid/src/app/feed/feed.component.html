@@ -3,4 +3,8 @@
     <button routerLink="/feed">FEED</button>
     <button routerLink="/about">ABOUT US</button>
     <h1>FEED</h1>
+    <div class="feeds" *ngFor="let feed of feeds">
+        <h2>{{feed.title}}</h2>
+        <p>{{feed.description}}</p>
+    </div>
 </div>
